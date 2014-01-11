@@ -38,12 +38,22 @@ public:
 		leftSpeed = leftStick->GetY();
 		rightSpeed = rightStick->GetY();
 		//set the motor speeds.
-		frontLeftMotor -> Set(leftSpeed);
-		backLeftMotor -> Set(leftSpeed);
-		frontRightMotor -> Set(leftSpeed);
-		backRightMotor -> Set(leftSpeed);
+		setLeft(leftSpeed);
+		setRight(rightSpeed);
 	}
 
+	void setLeft(float speed)
+	{
+		frontLeftMotor -> Set(speed);
+		backLeftMotor -> Set(speed);
+	}
+	
+	void setRight(float speed)
+	{
+		frontRightMotor -> Set(speed);
+		backRightMotor -> Set(speed);
+	}
+	
 };
 
 START_ROBOT_CLASS(CANBot);
